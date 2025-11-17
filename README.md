@@ -28,3 +28,15 @@ Run locally (without Docker):
 ```bash
 chmod +x wisecow.sh
 ./wisecow.sh
+
+KubeArmor Zero-Trust Policy (PS3)
+
+I deployed a zero-trust security policy using KubeArmor to restrict unwanted outbound network access from the Wisecow application.
+
+📄 Policy file:
+k8s/kubearmor-policy.yaml
+
+📸 Example violation detection:
+See: screenshots/kubearmor-pod-detection.png
+
+KubeArmor successfully detected blocked network egress attempts, confirming that the policy was applied correctly.
