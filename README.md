@@ -1,28 +1,30 @@
-# Cow wisdom web server
+# Wisecow – DevOps Assignment  
+**Containerization • Kubernetes Deployment • TLS • CI/CD**
 
-## Prerequisites
+This repository contains my implementation of the Wisecow DevOps assignment.
 
-```
-sudo apt install fortune-mod cowsay -y
-```
+The goal of the project is to:
 
-## How to use?
+- Containerize the Wisecow application  
+- Deploy it into a Kubernetes cluster (Minikube/Kind)  
+- Expose it as a Service  
+- Implement CI/CD with GitHub Actions  
+- (Challenge) Enable secure TLS communication using an Ingress  
 
-1. Run `./wisecow.sh`
-2. Point the browser to server port (default 4499)
+---
 
-## What to expect?
-![wisecow](https://github.com/nyrahul/wisecow/assets/9133227/8d6bfde3-4a5a-480e-8d55-3fef60300d98)
+# 📦 Application Overview
 
-# Problem Statement
-Deploy the wisecow application as a k8s app
+Wisecow is a simple bash-based web server that prints random “cow wisdom” using:
 
-## Requirement
-1. Create Dockerfile for the image and corresponding k8s manifest to deploy in k8s env. The wisecow service should be exposed as k8s service.
-2. Github action for creating new image when changes are made to this repo
-3. [Challenge goal]: Enable secure TLS communication for the wisecow app.
+- `fortune-mod`
+- `cowsay`
+- `netcat-openbsd`
 
-## Expected Artifacts
-1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
-2. Github repo with corresponding github action.
-3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
+The server listens on **port 4499**.
+
+Run locally (without Docker):
+
+```bash
+chmod +x wisecow.sh
+./wisecow.sh
